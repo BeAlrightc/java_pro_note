@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--创建一个Student bean-->
+    <bean id="student" class="com.DI.Student">
+<!--数组类型属性注入-->
+        <property name="courses">
+            <array>
+                <value>spring课程</value>
+                <value>mybatis课程</value>
+            </array>
+        </property>
+<!--list集合类型属性注入-->
+        <property name="list">
+            <list>
+                <value>王五</value>
+                <value>赵六</value>
+            </list>
+        </property>
+<!--map类型属性注入-->
+        <property name="maps">
+            <map>
+                <entry key="java" value="java"></entry>
+                <entry key="python" value="python"></entry>
+            </map>
+        </property>
+<!--set类型属性注入-->
+        <property name="sets">
+            <set>
+                <value>Go</value>
+                <value>c</value>
+            </set>
+        </property>
+    </bean>
+</beans>

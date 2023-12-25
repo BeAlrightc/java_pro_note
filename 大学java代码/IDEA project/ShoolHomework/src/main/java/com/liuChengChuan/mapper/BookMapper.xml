@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xmcu.mapper.BookMapper">
+    <select id="findBookById" parameterType="Integer" resultType="com.liuChengChuan.pojo.Book">
+        select * from mybatis.tb_book where id=#{id}
+    </select>
+    <update id="updateBook" parameterType="com.liuChengChuan.pojo.Book">
+        update mybatis.tb_book set bookName=#{bookName},price=#{price} where id =#{id};
+    </update>
+
+    <cache>
+
+    </cache>
+</mapper>

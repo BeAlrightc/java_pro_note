@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xpp.mapper.StudentMapper">
+    <select id="findAllStudent"
+            parameterType="com.xpp.pojo.Student"
+            resultMap="studentMap">
+        select * from dm_student where 1=1 <choose>
+        <when test="name !=null and name !=''">
+            and name like concat('%',#{name},'%')</when>
+        <when test="major !=null and major !=''">
+            and major=#{major}</when>
+        <otherwise> and sno is not null</otherwise></choose>
+
+    </select>
+</mapper>
+
+
+
+

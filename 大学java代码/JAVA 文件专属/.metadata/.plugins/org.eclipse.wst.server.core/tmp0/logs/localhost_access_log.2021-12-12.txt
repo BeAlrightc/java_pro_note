@@ -1,0 +1,10 @@
+127.0.0.1 - - [12/Dec/2021:23:23:32 +0800] "GET / HTTP/1.1" 404 700
+0:0:0:0:0:0:0:1 - - [12/Dec/2021:23:24:17 +0800] "GET /ServletJspDemo HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [12/Dec/2021:23:24:18 +0800] "GET /ServletJspDemo/ HTTP/1.1" 200 203
+0:0:0:0:0:0:0:1 - - [12/Dec/2021:23:24:20 +0800] "GET /ServletJspDemo/login.html HTTP/1.1" 200 394
+0:0:0:0:0:0:0:1 - - [12/Dec/2021:23:24:26 +0800] "POST /ServletJspDemo/login.html HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [12/Dec/2021:23:24:26 +0800] "GET /ServletJspDemo/list.html HTTP/1.1" 200 3556
+0:0:0:0:0:0:0:1 - - [12/Dec/2021:23:24:29 +0800] "GET /ServletJspDemo/login.html HTTP/1.1" 200 394
+0:0:0:0:0:0:0:1 - - [12/Dec/2021:23:24:33 +0800] "GET /ServletJspDemo/list.html HTTP/1.1" 200 3556
+0:0:0:0:0:0:0:1 - - [12/Dec/2021:23:24:34 +0800] "GET /ServletJspDemo/logout.html HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [12/Dec/2021:23:24:34 +0800] "GET /ServletJspDemo/login.html HTTP/1.1" 200 394

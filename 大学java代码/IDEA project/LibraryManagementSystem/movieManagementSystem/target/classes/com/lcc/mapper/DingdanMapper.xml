@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lcc.mapper.DingdanMapper">
+
+    <resultMap id="BaseDingdanMap" type="com.lcc.pojo.Dingdan">
+        <id column="id" property="id" />
+        <result column="Dname" property="Dname" />
+        <result column="CTime" property="CTime" />
+        <result column="price" property="price" />
+        <result column="count" property="count" />
+        <result column="ChangCi" property="ChangCi" />
+        <result column="name" property="name" />
+        <result column="MovieN" property="MovieN" />
+    </resultMap>
+
+    <select id="selectAll" parameterType="int" resultMap="BaseDingdanMap">
+        select *
+        from tb_dingdan
+    </select>
+
+    <select id="selectAdminAllById" parameterType="int" resultMap="BaseDingdanMap">
+        select * from t_admin where user_id = #{id}
+    </select>
+
+</mapper>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"/>
+    <settings>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    <typeAliases>
+        <package name="com.liuChengChuan.pojo"/>
+<!--    <typeAlias type="com.liuChengChuan.pojo.Student" alias="Student"/>-->
+<!--    <typeAlias type="com.liuChengChuan.pojo.IdCard" alias="IdCard"/>-->
+<!--    <typeAlias type="com.liuChengChuan.pojo.Person" alias="Person"/>-->
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${mysql.driver}"/>
+                <property name="url" value="${mysql.url}"/>
+                <property name="username" value="${mysql.username}"/>
+                <property name="password" value="${mysql.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/liuChengChuan/mapper/StudentMapper.xml"/>
+        <mapper resource="com/liuChengChuan/mapper/IdCardMapper.xml"/>
+        <mapper resource="com/liuChengChuan/mapper/PersonMapper.xml"/>
+        <mapper resource="com/liuChengChuan/mapper/UsersMapper.xml"/>
+        <mapper resource="com/liuChengChuan/mapper/OrdersMapper.xml"/>
+        <mapper resource="com/liuChengChuan/mapper/ProductMapper.xml"/>
+        <mapper resource="com/liuChengChuan/mapper/BookMapper.xml"/>
+        <mapper resource="com/huangsongxuan/mapper/CategoryMapper.xml"/>
+        <mapper resource="com/xiaoqinyan/mapper/CategoryMapper.xml"/>
+    </mappers>
+</configuration>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lcc.mapper.MovieMapper">
+
+    <resultMap id="BaseMovieMap" type="com.lcc.pojo.Movie">
+        <id column="id" property="id" />
+        <result column="mname" property="mname" />
+        <result column="type" property="type" />
+        <result column="price" property="price" />
+        <result column="number" property="number" />
+        <result column="TypeD" property="TypeD" />
+        <result column="time" property="time" />
+    </resultMap>
+
+    <select id="selectAll" parameterType="int" resultMap="BaseMovieMap">
+        select *
+        from tb_movie
+    </select>
+
+    <select id="selectmovieAllById" parameterType="int" resultMap="BaseMovieMap">
+        select * from tb_movie where id = #{id}
+    </select>
+
+    <select id="delete" parameterType="int" resultMap="BaseMovieMap">
+        delete from tb_movie where id= #{id}
+    </select>
+    <select id="update" parameterType="BaseMovieMap" resultMap="BaseMovieMap">
+
+    </select>
+
+
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/springMVC-annotation" />
+    <file type="web" url="file://$PROJECT_DIR$/springMVC-demo3e" />
+    <file type="web" url="file://$PROJECT_DIR$/springMVC-demo4" />
+    <file type="web" url="file://$PROJECT_DIR$/springMVC-demo5" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-demo6" />
+    <file type="web" url="file://$PROJECT_DIR$/springMVC-jsp" />
+    <file type="web" url="file://$PROJECT_DIR$/springMVC-rest" />
+    <file type="web" url="file://$PROJECT_DIR$/springMVC_demo1" />
+    <file type="web" url="file://$PROJECT_DIR$/sprinMVC_demo2" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/springMVC_demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/sprinMVC_demo2/pom.xml" />
+        <option value="$PROJECT_DIR$/../springMVC-demo3/pom.xml" />
+        <option value="$PROJECT_DIR$/springMVC-demo3e/pom.xml" />
+        <option value="$PROJECT_DIR$/springMVC-jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/springMVC-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/springMVC-demo4/pom.xml" />
+        <option value="$PROJECT_DIR$/springMVC-demo5/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc-demo6/pom.xml" />
+        <option value="$PROJECT_DIR$/springMVC-annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/chater10/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="helloSpring" class="com.xmcu.HelloSpring">
+        <property name="userName" value="张三">
+        </property>
+    </bean>
+<!--创建一个userDao的bean-->
+    <bean id="userDao" class="com.xmcu.dao.impl.UserDaoImpl"></bean>
+    <bean id="userService" class="com.xmcu.service.Impl.UserServiceImpl"
+             autowire="byName">
+<!--将userDao注入到UserService这个Bean当中-->
+<!--将这个注释掉并使用autowire属性进行自动装配
+<property name="userDao" ref="userDao"></property>-->
+
+    </bean>
+
+</beans>

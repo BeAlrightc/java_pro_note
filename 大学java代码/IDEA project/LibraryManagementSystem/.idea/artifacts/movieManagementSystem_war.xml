@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="movieManagementSystem:war">
+    <output-path>$PROJECT_DIR$/LibraryManagementSystem/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>movieManagementSystem</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="LibraryManagementSystem.war">
+      <element id="artifact" artifact-name="movieManagementSystem:war exploded" />
+    </root>
+  </artifact>
+</component>

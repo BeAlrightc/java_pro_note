@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wrx.mapper.AdminMapper">
+
+    <resultMap id="BaseAdminMap" type="com.wrx.pojo.Admin">
+        <id column="user_id" property="userId" />
+        <result column="login_name" property="loginName" />
+        <result column="login_password" property="loginPassword" />
+    </resultMap>
+
+    <select id="test" parameterType="int" resultMap="BaseAdminMap">
+        select *
+        from t_admin
+        where user_id = #{id}
+    </select>
+
+</mapper>

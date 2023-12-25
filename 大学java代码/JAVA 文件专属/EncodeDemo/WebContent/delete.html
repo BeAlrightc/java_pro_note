@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>delete</title>
+</head>
+<body>
+<a href="delete?username=张三&age=25">删除张三的数据</a><br/>
+
+<a href="javascript:void" onclik="deleteData()">删除张三的数据</a><br/>
+<script >
+     function deleteData(){
+    	 location.href="delete?username="+encodeURl("张三")+"&age=25";
+     }
+</script>
+</body>
+</html>
