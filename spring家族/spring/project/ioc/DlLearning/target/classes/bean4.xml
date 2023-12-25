@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--内部bean-->
+    <bean id="employee" class="com.DI.Employee">
+<!--为其注入属性操作-->
+        <property name="ename" value="汤姆"></property>
+        <property name="gender" value="男"></property>
+<!--设置对象类属性 以property嵌套bean的方式进行操作-->
+        <property name="dept">
+            <bean id="dept" class="com.DI.Dept">
+                <property name="dname" value="安保部">
+                </property>
+            </bean>
+        </property>
+    </bean>
+</beans>

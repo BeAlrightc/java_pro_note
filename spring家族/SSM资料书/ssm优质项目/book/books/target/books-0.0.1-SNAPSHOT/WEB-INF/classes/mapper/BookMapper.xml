@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.books.dao.BookMapper">
+  <resultMap id="BaseResultMap" type="com.books.entity.Book">
+    <id column="bookid" jdbcType="INTEGER" property="bookid" />
+    <result column="bookname" jdbcType="VARCHAR" property="bookname" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="publish" jdbcType="VARCHAR" property="publish" />
+    <result column="pages" jdbcType="INTEGER" property="pages" />
+    <result column="price" jdbcType="REAL" property="price" />
+    <result column="categoryid" jdbcType="INTEGER" property="categoryid" />
+    <association javaType="com.books.entity.Category" property="category">
+      <result column="categoryname" jdbcType="VARCHAR" property="categoryname" />
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List">
+    bookid, bookname, author, publish, pages, price, categoryid
+  </sql>
+<!--查询全部操作-->
+  <select id="findAll" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+    sys_category.categoryname,
+    sys_book.bookid,
+    sys_book.bookname,
+    sys_book.author,
+    sys_book.publish,
+    sys_book.pages,
+    sys_book.price
+    FROM
+    sys_category,
+    sys_book
+    WHERE
+    sys_book.categoryid = sys_category.categoryid
+    <if test="bookname != null and bookname != ''">
+    and bookname like concat('%',#{bookname,jdbcType=VARCHAR} ,'%')
+    </if>
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_book
+    where bookid = #{bookid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sys_book
+    where bookid = #{bookid,jdbcType=INTEGER}
+  </delete>
+  <!--插入操作-->
+  <insert id="insert" parameterType="com.books.entity.Book">
+    insert into sys_book(bookid,bookname,author,publish, pages, price,categoryid)
+    values (#{bookid,jdbcType=INTEGER}, #{bookname,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
+      #{publish,jdbcType=VARCHAR}, #{pages,jdbcType=INTEGER}, #{price,jdbcType=REAL}, 
+      #{categoryid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.books.entity.Book">
+    insert into sys_book
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bookid != null">
+        bookid,
+      </if>
+      <if test="bookname != null">
+        bookname,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="publish != null">
+        publish,
+      </if>
+      <if test="pages != null">
+        pages,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="categoryid != null">
+        categoryid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bookid != null">
+        #{bookid,jdbcType=INTEGER},
+      </if>
+      <if test="bookname != null">
+        #{bookname,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="publish != null">
+        #{publish,jdbcType=VARCHAR},
+      </if>
+      <if test="pages != null">
+        #{pages,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=REAL},
+      </if>
+      <if test="categoryid != null">
+        #{categoryid,jdbcType=INTEGER}
+      </if>
+    </trim>
+  </insert>
+  <!--更新操作-->
+  <update id="updateByPrimaryKeySelective" parameterType="com.books.entity.Book">
+    update sys_book
+    <set>
+      <if test="bookname != null">
+        bookname = #{bookname,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="publish != null">
+        publish = #{publish,jdbcType=VARCHAR},
+      </if>
+      <if test="pages != null">
+        pages = #{pages,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=REAL},
+      </if>
+      <if test="categoryid != null">
+        categoryid = #{categoryid,jdbcType=INTEGER}
+      </if>
+    </set>
+    where bookid = #{bookid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.books.entity.Book">
+    update sys_book
+    set bookname = #{bookname,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      publish = #{publish,jdbcType=VARCHAR},
+      pages = #{pages,jdbcType=INTEGER},
+      price = #{price,jdbcType=REAL},
+      categoryid = #{categoryid,jdbcType=INTEGER}
+    where bookid = #{bookid,jdbcType=INTEGER}
+  </update>
+</mapper>

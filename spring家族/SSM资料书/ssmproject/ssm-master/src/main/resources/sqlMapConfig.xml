@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--核心文件约束头  configuration内的标签是有顺序的否则会报错-->
+<configuration>
+<!--    为全定限名起别名user-->
+<!--    <typeAliases>-->
+<!--        <typeAlias type="com.zlx.beans.ChooseCourse" alias="chooseCourse"></typeAlias>-->
+<!--        <typeAlias type="com.zlx.beans.Classes" alias="classes"></typeAlias>-->
+<!--        <typeAlias type="com.zlx.beans.Course" alias="course"></typeAlias>-->
+<!--        <typeAlias type="com.zlx.beans.StudentInfo" alias="studentInfo"></typeAlias>-->
+<!--        <typeAlias type="com.zlx.beans.TeacherInfo" alias="teacherInfo"></typeAlias>-->
+<!--    </typeAliases>-->
+
+<!--    配置数据源移动到spring中配置-->
+<!--    加载映射文件移到spring，变为扫描mapper类所在的包-->
+
+
+<!--    加载映射文件-->
+    <mappers>
+<!--        加载单个-->
+        <mapper resource="com.zlx.mapper/UserMapper.xml"></mapper>
+        <mapper resource="com.zlx.mapper/UserLoginMapper.xml"></mapper>
+<!--        扫描整个包-->
+
+<!--        <package name="mapper"/>-->
+
+
+    </mappers>
+
+</configuration>
